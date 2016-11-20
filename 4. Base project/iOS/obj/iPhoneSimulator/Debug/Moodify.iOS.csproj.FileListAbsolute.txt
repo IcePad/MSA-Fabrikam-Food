@@ -1,0 +1,6 @@
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\optimized\
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\Moodify.iOS.csprojResolveAssemblyReference.cache
+D:\Documents\Microsoft Student Accelerator\2016-Phase-2-master\Auckland\Day 1\4. Base project\iOS\obj\iPhoneSimulator\Debug\Moodify.iOS.csproj.Moodify.iOS.exe.config

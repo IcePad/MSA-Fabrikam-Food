@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Moodify.MenuPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout Spacing="10" BackgroundColor="White">
+      <Label TextColor="#58c0fc" FontSize = "100" Text="Menu" HorizontalTextAlignment="Center" />
+			<Button Text="Food From Emotion" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoHomeCommand}" />
+			<Button Text="Interactive Menu" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoSecondCommand}" />
+      <Button Text="Check Delivery" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoThirdCommand}" />
+      <Button Text="Staff" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoStaffCommand}" />
+		</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>

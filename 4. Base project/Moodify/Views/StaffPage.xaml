@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.StaffPage">
+  <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="2*" />
+        <RowDefinition Height="1*" />
+        <RowDefinition Height="5*" />
+        <RowDefinition Height="2*" />
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" TextColor="White"/>
+    <Entry Grid.Row="1" IsPassword="true" Placeholder="Enter Password"/>
+    <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Login" Clicked ="loginClicked"/>
+    <Label Grid.Row="3" TextColor="White" />
+</Grid>
+</ContentPage>
