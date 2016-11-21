@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.SignUpPage">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" TextColor="#58c0fc" FontSize="30" Text="Enter User Name"  />
+    <Entry Grid.Row="1" x:Name="userNameInput" Placeholder="User Name" TextColor="Pink"/>
+    <Label Grid.Row="2" TextColor="#58c0fc" FontSize="30" Text="Enter Password"  />
+    <Entry Grid.Row="3" x:Name="passwordInput" Placeholder="Password" TextColor="Pink" IsPassword="true"/>
+    <Label Grid.Row="4" TextColor="#58c0fc" FontSize="30" Text="Error" IsVisible="false" />
+    <Button Grid.Row="5" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Sign Up" Clicked="NewSignUp_Clicked"/>
+  </Grid>
+</ContentPage>

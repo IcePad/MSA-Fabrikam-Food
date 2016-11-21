@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="50*" />
                   </Grid.ColumnDefinitions>
                   <Label Grid.Column="0" Text="{Binding Name}"/>
-                  <Label Grid.Column="1" Text="$" HorizontalTextAlignment="E"/>
+                  <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
                   <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
                   <Label Grid.Column="3" Text="{Binding Mood}"/>
                 </Grid>

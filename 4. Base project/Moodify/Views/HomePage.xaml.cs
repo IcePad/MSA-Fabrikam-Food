@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Microsoft.WindowsAzure.MobileServices;
+using Moodify.Views;
 
 namespace Moodify
 {
@@ -17,6 +18,17 @@ namespace Moodify
 			InitializeComponent();
 		}
 
-        
+        private void SignUp_Clicked(object sender, EventArgs e) {
+            App.RootPage.Detail = new NavigationPage(new SignUpPage());
+            App.MenuIsPresented = false;
+        }
+
+        private void LogIn_Clicked(object sender, EventArgs e) {
+            App.RootPage.Detail = new NavigationPage(new LogInPage());
+            App.MenuIsPresented = false;
+        }
+
+
+
     }
 }

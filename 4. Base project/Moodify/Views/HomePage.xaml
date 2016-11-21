@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Moodify.HomePage">
-
+  <StackLayout BackgroundColor="White">
+    <Label HorizontalTextAlignment="Center" Text="Fabrikam" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
+    <Label HorizontalTextAlignment="Center" Text="Food!" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
+    <Button x:Name="logIn_btn" Text="Log In" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Clicked="LogIn_Clicked" />
+    <Button x:Name="signUp_btn" Text="Sign Up" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Clicked="SignUp_Clicked" />
+  </StackLayout>
 </ContentPage>
