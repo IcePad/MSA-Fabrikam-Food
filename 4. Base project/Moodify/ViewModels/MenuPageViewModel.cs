@@ -8,7 +8,7 @@ namespace Moodify
 	public class MenuPageViewModel
 	{
 		public ICommand GoHomeCommand { get; set; }
-		public ICommand GoSecondCommand { get; set; }
+		public ICommand GoEmotionCommand { get; set; }
         public ICommand GoThirdCommand { get; set;  }
         public ICommand GoStaffCommand { get; set; }
         public ICommand GoFoodInputCommand { get; set; }
@@ -16,7 +16,7 @@ namespace Moodify
         public MenuPageViewModel()
 		{
 			GoHomeCommand = new Command(GoHome);
-			GoSecondCommand = new Command(GoSecond);
+			GoEmotionCommand = new Command(GoEmotion);
             GoThirdCommand = new Command(GoThird);
             GoStaffCommand = new Command(GoStaff);
             GoFoodInputCommand = new Command(GoFoodInput);
@@ -28,9 +28,9 @@ namespace Moodify
 			App.MenuIsPresented = false;
 		}
 
-		void GoSecond(object obj)
+		void GoEmotion(object obj)
 		{
-            App.RootPage.Detail = new NavigationPage(new SecondPage());
+            App.RootPage.Detail = new NavigationPage(new EmotionPage());
             App.MenuIsPresented = false;
 		}
 

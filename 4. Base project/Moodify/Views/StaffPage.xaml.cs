@@ -12,8 +12,12 @@ namespace Moodify.Views {
         }
 
         private void loginClicked(object sender, EventArgs e) {
-            App.RootPage.Detail = new NavigationPage(new FoodInputPage());
-            App.MenuIsPresented = false;
+            if (passInput.Text == "2828") {
+                App.RootPage.Detail = new NavigationPage(new FoodInputPage());
+                App.MenuIsPresented = false;
+            } else {
+                DisplayAlert("Alert", "Incorrect password", "OK");
+            }
         }
     }
 }

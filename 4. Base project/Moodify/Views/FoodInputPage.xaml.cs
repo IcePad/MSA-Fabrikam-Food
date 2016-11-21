@@ -14,18 +14,32 @@ namespace Moodify.Views {
         }
 
         public async void insert_Clicked(object sender, EventArgs e) {
-            var nameText = nameInput.Text;
-            var priceText = Double.Parse(priceInput.Text);
-            var moodText = moodInput.Text;
+            var i = moodInput.Text;
+            if (i != "Happy"
+                && i != "Angry"
+                && i != "Contempt"
+                && i != "Disgusted"
+                && i != "Scared"
+                && i != "Neutral"
+                && i != "Sad"
+                && i != "Surprised") {
+                await DisplayAlert("Alert", "Invalid Mood! \n Please enter \n Happy, Angry, Contempt, \n Disgusted, Scared, Neutral,\n Sad or Surprised!", "OK");
+            } else {
+                var nameText = nameInput.Text;
+                var priceText = Double.Parse(priceInput.Text);
+                var moodText = moodInput.Text;
 
-            FoodItemModel FoodItem = new FoodItemModel() {
-                Name = nameText,
-                Price = priceText,
-                Mood = moodText
-            };
+                FoodItemModel FoodItem = new FoodItemModel() {
+                    Name = nameText,
+                    Price = priceText,
+                    Mood = moodText
+                };
 
-            await AzureManager.AzureManagerInstance.AddFoodItemModel(FoodItem);
-
+                await AzureManager.AzureManagerInstance.AddFoodItemModel(FoodItem);
+                await DisplayAlert("Alert", "Successfully Inserted new food item!", "OK");
+                App.RootPage.Detail = new NavigationPage(new FoodInputPage());
+                App.MenuIsPresented = false;
+            }
         }
 
     }

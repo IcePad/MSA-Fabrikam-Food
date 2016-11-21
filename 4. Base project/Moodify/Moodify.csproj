@@ -39,7 +39,7 @@
     <EmbeddedResource Include="Views\RootPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SecondPage.xaml">
+    <EmbeddedResource Include="Views\EmotionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -62,8 +62,8 @@
     <Compile Include="Views\RootPage.xaml.cs">
       <DependentUpon>RootPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SecondPage.xaml.cs">
-      <DependentUpon>SecondPage.xaml</DependentUpon>
+    <Compile Include="Views\EmotionPage.xaml.cs">
+      <DependentUpon>EmotionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>

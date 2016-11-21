@@ -10,7 +10,7 @@
         <RowDefinition Height="2*" />
     </Grid.RowDefinitions>
     <Label Grid.Row="0" TextColor="White"/>
-    <Entry Grid.Row="1" IsPassword="true" Placeholder="Enter Password"/>
+    <Entry x:Name="passInput" Grid.Row="1" IsPassword="true" Placeholder="Enter Password"/>
     <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Login" Clicked ="loginClicked"/>
     <Label Grid.Row="3" TextColor="White" />
 </Grid>

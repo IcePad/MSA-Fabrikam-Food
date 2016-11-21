@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Moodify.Views.EmotionPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout BackgroundColor="White">
+        <Label HorizontalTextAlignment="Center" Text="Fabrikam" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
+        <Label HorizontalTextAlignment="Center" Text="Food!" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
+        <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+        <Button x:Name="TakePicBtn" Text="Take Picture" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="TakePicture_Clicked" />
+        <Button x:Name="accept_btn" Text="Accept Order" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="Accept_Clicked" IsVisible="false" />
+
+        <Label x:Name="errorLabel" />
+
+        <Label x:Name="Menu" Text="placeholder" IsVisible="false" />
+        <ListView x:Name="foodList" HasUnevenRows="True">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="50*" />
+                  </Grid.ColumnDefinitions>
+                  <Label Grid.Column="0" Text="{Binding Name}"/>
+                  <Label Grid.Column="1" Text="$" HorizontalTextAlignment="E"/>
+                  <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                  <Label Grid.Column="3" Text="{Binding Mood}"/>
+                </Grid>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
