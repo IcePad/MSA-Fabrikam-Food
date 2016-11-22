@@ -12,6 +12,7 @@ namespace Moodify.DataModels {
 
         public string Name { get; set; }
         public double Price { get; set; }
+        public double EmotionPrice { get; set; }
         public string Mood { get; set; }
 
     }

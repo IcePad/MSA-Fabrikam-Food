@@ -9,8 +9,11 @@ using Xamarin.Forms;
 
 namespace Moodify.Views
 {
-	public partial class EmotionPage : ContentPage
-	{
+	public partial class EmotionPage : ContentPage{
+        //Variables
+        double total = 0;
+        List<OrderModel> preCart = new List<OrderModel>();
+        OrderModel tOrder = new OrderModel();
         string tStatus = "feelings";
 
         public EmotionPage()
@@ -59,7 +62,7 @@ namespace Moodify.Views
                 Device.BeginInvokeOnMainThread(() => {
                     TakePicBtn.Text = "Retake photo!";
                     TakePicBtn.FontSize = 15;
-                    accept_btn.Text = "You're " + tStatus + "! Click here to see items to match your mood!";
+                    accept_btn.Text = tStatus + " Menu!";
                     accept_btn.IsVisible = true;
                 });
                 var temp = emotionResults[0].Scores;
@@ -128,6 +131,63 @@ namespace Moodify.Views
                 tStatus = "Neutral";
             }
         }
+
+
+        public async void addtoCardBtn(object sender, EventArgs e) {
+            if (App.loggedIn == true) {
+                var mi = ((Button)sender);
+                await DisplayAlert("Alert", mi.Text + " added to your cart!", "OK");
+                List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
+                foreach (FoodItemModel item in foodItems) {
+                    if (item.Name == mi.Text) {
+                        total = total + item.EmotionPrice;
+                        cartTotal.Text = "Total: $" + total.ToString();
+                        string name = App.currentName;
+                        tOrder = new OrderModel() {
+                            Name = App.currentName,
+                            FoodName = item.Name,
+                            Price = item.EmotionPrice
+                        };
+                        preCart.Add(tOrder);
+                    }
+                }
+            } else {
+                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                App.RootPage.Detail = new NavigationPage(new HomePage());
+            }
+        }
+
+
+        private async void cartBtn(object sender, EventArgs e) {
+            if (App.loggedIn == true) {
+                viewCart();
+            } else {
+                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                App.RootPage.Detail = new NavigationPage(new HomePage());
+            }
+        }
+
+        public async void viewCart() {
+            string cartList = "";
+            foreach (OrderModel item in preCart) {
+                cartList = cartList + item.FoodName + " $" + item.Price + Environment.NewLine;
+            }
+            var answer = await DisplayAlert("Complete purchase?", cartList, "Yes", "No");
+            if (answer == true) {
+                foreach (OrderModel item in preCart) {
+                    await AzureManager.AzureManagerInstance.AddOrderModel(item);
+                }
+            }
+            if (answer == false) {
+            }
+        }
+
+        public async void clearbtn(object sender, EventArgs e) {
+            preCart = new List<OrderModel>();
+            cartTotal.Text = "Total: $0.00";
+        }
+
+
 
     }
 }

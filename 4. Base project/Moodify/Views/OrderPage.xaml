@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.OrderPage">
+  
+  <StackLayout>
+    <Label HorizontalTextAlignment="Center" Text="Personal Orders" TextColor="#58c0fc" BackgroundColor="White" FontSize="50" />
+    <Label x:Name ="nameDisplay" HorizontalTextAlignment="Center" Text="" TextColor="#58c0fc" BackgroundColor="White" FontSize="15" />
+    <ListView x:Name="orderList" HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="40*" />
+              </Grid.ColumnDefinitions>
+              <Label Grid.Column="0" Text="{Binding FoodName}"/>
+              <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+              <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label x:Name="totalDisplay" HorizontalTextAlignment="Center" Text="" TextColor="#58c0fc" BackgroundColor="White" FontSize="15" />
+  </StackLayout>
+</ContentPage>
