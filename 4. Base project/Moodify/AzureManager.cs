@@ -13,12 +13,14 @@ namespace Moodify {
         private IMobileServiceTable<EmotionModel> emotionModelTable;
         private IMobileServiceTable<FoodItemModel> foodItemModelTable;
         private IMobileServiceTable<UserModel> userModelTable;
+        private IMobileServiceTable<OrderModel> orderModelTable;
 
         private AzureManager() {
             this.client = new MobileServiceClient("http://moodtimelinee.azurewebsites.net/");
             this.emotionModelTable = this.client.GetTable<EmotionModel>();
             this.foodItemModelTable = this.client.GetTable<FoodItemModel>();
             this.userModelTable = this.client.GetTable<UserModel>();
+            this.orderModelTable = this.client.GetTable<OrderModel>();
         }
 
         public MobileServiceClient AzureClient {
@@ -57,6 +59,18 @@ namespace Moodify {
 
         public async Task<List<UserModel>> GetUserModels() {
             return await this.userModelTable.ToListAsync();
+        }
+
+        public async Task AddOrderModel(OrderModel orderModel) {
+            await this.orderModelTable.InsertAsync(orderModel);
+        }
+
+        public async Task DeleteOrderModel(OrderModel orderModel) {
+            await this.orderModelTable.DeleteAsync(orderModel);
+        }
+
+        public async Task<List<OrderModel>> GetOrderModels() {
+            return await this.orderModelTable.ToListAsync();
         }
     }
 }

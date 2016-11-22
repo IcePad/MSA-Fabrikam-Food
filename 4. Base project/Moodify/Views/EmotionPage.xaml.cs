@@ -16,9 +16,20 @@ namespace Moodify.Views
         public EmotionPage()
 		{
 			InitializeComponent();
+
 		}
 
         private async void TakePicture_Clicked(object sender, EventArgs e) {
+            if (App.loggedIn == true) {
+                takePicture();
+            } else {
+                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                App.RootPage.Detail = new NavigationPage(new HomePage());
+            }
+
+        }
+
+        private async void takePicture() {
             //Check to see if camera is available
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported) {
                 await DisplayAlert("No Camera", ":( No camera available", "OK");
@@ -69,6 +80,8 @@ namespace Moodify.Views
                 errorLabel.Text = ex.Message;
             }
         }
+            
+        
 
         private async void Accept_Clicked(object sender, EventArgs e) {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();

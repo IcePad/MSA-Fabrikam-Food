@@ -12,18 +12,23 @@ namespace Moodify
         public ICommand GoThirdCommand { get; set;  }
         public ICommand GoStaffCommand { get; set; }
         public ICommand GoFoodInputCommand { get; set; }
+        public string name { get; set; }
+        public bool logg { get; set;  }
 
         public MenuPageViewModel()
 		{
+            name = App.currentName;
+            logg = App.loggedIn;
 			GoHomeCommand = new Command(GoHome);
 			GoEmotionCommand = new Command(GoEmotion);
-            GoThirdCommand = new Command(GoThird);
+            GoThirdCommand = new Command(GoFoodMenu);
             GoStaffCommand = new Command(GoStaff);
             GoFoodInputCommand = new Command(GoFoodInput);
 		}
 
 		void GoHome(object obj)
 		{
+
             App.RootPage.Detail = new NavigationPage(new HomePage());
 			App.MenuIsPresented = false;
 		}
@@ -34,8 +39,8 @@ namespace Moodify
             App.MenuIsPresented = false;
 		}
 
-        void GoThird(object obj) {
-            App.RootPage.Detail = new NavigationPage(new ThirdPage());
+        void GoFoodMenu(object obj) {
+            App.RootPage.Detail = new NavigationPage(new FoodMenuPage());
             App.MenuIsPresented = false; 
         }
 

@@ -15,21 +15,21 @@ namespace Moodify.Views {
             InitializeComponent();
         }
 
-        private async void UserLogIn_Clicked(object sender, EventArgs e) {
+        private void UserLogIn_Clicked(object sender, EventArgs e) {
             checkName();
-            if(nameInDb == false) {
-                await DisplayAlert("Alert", "Incorrect user name!", "OK");
-            } else {
-                checkPassword();
-            }
         }
 
         private async void checkName() {
+            bool nameNotInDb = false; 
             List<UserModel> userItems = await AzureManager.AzureManagerInstance.GetUserModels();
             foreach (var user in userItems) {
                 if (user.UserName == loginName.Text) {
-                    nameInDb = true; 
+                    checkPassword();
+                    nameNotInDb = true; 
                 }
+            }
+            if(nameNotInDb == false) {
+                await DisplayAlert("Alert", "User name is not regiestered!", "OK");
             }
         }
 
@@ -37,12 +37,14 @@ namespace Moodify.Views {
             bool correctPass = false; 
             List<UserModel> userItems = await AzureManager.AzureManagerInstance.GetUserModels();
             foreach (var user in userItems) {
-                if (user.UserName == loginName.Text) {
-                    if(user.Password == loginPass.Text) {
+                if (user.UserName == loginName.Text && user.Password == loginPass.Text) {
+                        App.currentName = loginName.Text;
+                        App.loggedIn = true;
                         await DisplayAlert("Alert", "Successfully logged in!", "OK");
-                        correctPass = true; 
-                    }
-                }
+                        correctPass = true;
+                        App.RootPage.Master = new MenuPage();
+                        App.MenuIsPresented = false;
+                }  
             }
             if(correctPass == false) {
                 await DisplayAlert("Alert", "Incorrect Password!", "OK");

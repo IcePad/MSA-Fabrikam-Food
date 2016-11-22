@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.FoodMenuPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout BackgroundColor="White"   >
+        <Label HorizontalTextAlignment="Center" Text="Menu!" TextColor="#58c0fc" BackgroundColor="White" FontSize="50" />
+        <Button Text="Cart" Clicked="cartBtn"/>
+        <Label x:Name="cartTotal" HorizontalTextAlignment="Start" Text="Total: $0.00" TextColor="#58c0fc" BackgroundColor="White" FontSize="20" />
+        <Button Text="Clear" Clicked="clearbtn" BackgroundColor="Red" FontSize="20"/>
+        <Label HorizontalTextAlignment="Start" Text="Happy" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="happyMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Angry" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="angryMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                   <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Contempt" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="ContemptMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Disgusted" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+        <StackLayout>
+          <ListView x:Name="DisgustedMenuList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                  <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Scared" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="ScaredMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Neutral" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="NeutralMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Sad" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="SadMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+        <Label HorizontalTextAlignment="Start" Text="Surprised" TextColor="#58c0fc" BackgroundColor="White" FontSize="30" />
+          <StackLayout>
+            <ListView x:Name="SurprisedMenuList" HasUnevenRows="True">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0" Text="{Binding Name}" Clicked="addBtn" CommandParameter="{Binding .}"/>
+                      <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+                      <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

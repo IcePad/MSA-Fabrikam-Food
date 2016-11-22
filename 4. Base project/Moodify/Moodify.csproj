@@ -47,6 +47,7 @@
     <Compile Include="AzureManager.cs" />
     <Compile Include="DataModels\EmotionModel.cs" />
     <Compile Include="DataModels\FoodItemModel.cs" />
+    <Compile Include="DataModels\OrderModel.cs" />
     <Compile Include="DataModels\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
@@ -75,8 +76,8 @@
     <Compile Include="Views\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ThirdPage.xaml.cs">
-      <DependentUpon>ThirdPage.xaml</DependentUpon>
+    <Compile Include="Views\FoodMenuPage.xaml.cs">
+      <DependentUpon>FoodMenuPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -131,11 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\ThirdPage.xaml">
+    <EmbeddedResource Include="Views\FoodMenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -7,6 +7,8 @@ namespace Moodify
 		
 		public static NavigationPage NavigationPage { get; private set; }
 		public static RootPage RootPage;
+        public static string currentName = "Not Signed In";
+        public static bool loggedIn = false;
 
 		public static bool MenuIsPresented
 		{
