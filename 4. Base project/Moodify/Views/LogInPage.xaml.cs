@@ -35,9 +35,11 @@ namespace Moodify.Views {
 
         private async void checkPassword() {
             bool correctPass = false; 
+            
             List<UserModel> userItems = await AzureManager.AzureManagerInstance.GetUserModels();
             foreach (var user in userItems) {
-                if (user.UserName == loginName.Text && user.Password == loginPass.Text) {
+                string s = Encoding.UTF8.GetString(user.EncryptedPass, 0, user.EncryptedPass.Length); 
+                if (user.UserName == loginName.Text && s == loginPass.Text) {
                         App.currentName = loginName.Text;
                         App.loggedIn = true;
                         await DisplayAlert("Alert", "Successfully logged in!", "OK");

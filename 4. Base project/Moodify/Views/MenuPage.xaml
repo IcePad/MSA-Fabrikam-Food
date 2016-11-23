@@ -5,7 +5,7 @@
 	</ContentPage.Padding>
 	<ContentPage.Content>
 		<StackLayout Spacing="10" BackgroundColor="White">
-      <Label TextColor="#58c0fc" FontSize = "100" Text="Menu" HorizontalTextAlignment="Center" />
+      <Label TextColor="#58c0fc" FontSize = "75" Text="Menu" HorizontalTextAlignment="Center" />
       <Label x:Name="uName" TextColor="#58c0fc" FontSize = "10" Text="{Binding name}" HorizontalTextAlignment="Center" />
 			<Button Text="Home" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoHomeCommand}" />
 			<Button Text="Emotive Food Idea's" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoEmotionCommand}" />
@@ -13,6 +13,7 @@
       <Button Text="View Orders" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoOrderCommand}" />
       <Button Text="Map" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoMapCommand}" />
       <Button Text="Staff" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoStaffCommand}" />
+      <Image Source="icon.jpg" />
 		</StackLayout>
 
 	</ContentPage.Content>

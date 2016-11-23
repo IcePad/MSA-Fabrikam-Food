@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
+
 namespace Moodify.Views {
     public partial class SignUpPage : ContentPage {
+
+
         public SignUpPage() {
             InitializeComponent();
         }
@@ -47,9 +50,15 @@ namespace Moodify.Views {
         private async void insertUserIntoDatabase() {
             string newName = userNameInput.Text;
             string newPass = passwordInput.Text;
+
+
+
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(newPass);
+            string s = System.Text.Encoding.UTF8.GetString(buffer, 0, buffer.Length);
             UserModel userItem = new UserModel() {
                 UserName = newName,
-                Password = newPass
+                Password = s,
+                EncryptedPass = buffer
             };
             await AzureManager.AzureManagerInstance.AddUserModel(userItem);
             await DisplayAlert("Alert", "Successfully signed up!", "OK");

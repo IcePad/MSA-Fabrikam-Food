@@ -16,7 +16,7 @@ namespace Moodify {
         private IMobileServiceTable<OrderModel> orderModelTable;
 
         private AzureManager() {
-            this.client = new MobileServiceClient("http://moodtimelinee.azurewebsites.net/");
+            this.client = new MobileServiceClient("https://moodtimelinee.azurewebsites.net/");
             this.emotionModelTable = this.client.GetTable<EmotionModel>();
             this.foodItemModelTable = this.client.GetTable<FoodItemModel>();
             this.userModelTable = this.client.GetTable<UserModel>();
