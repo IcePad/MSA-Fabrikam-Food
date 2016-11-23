@@ -28,5 +28,6 @@
       </ListView.ItemTemplate>
     </ListView>
     <Label x:Name="totalDisplay" HorizontalTextAlignment="Center" Text="" TextColor="#58c0fc" BackgroundColor="White" FontSize="15" />
+    <ActivityIndicator x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
   </StackLayout>
 </ContentPage>

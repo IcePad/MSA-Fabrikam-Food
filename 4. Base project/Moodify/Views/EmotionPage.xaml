@@ -6,6 +6,7 @@
         <Label HorizontalTextAlignment="Center" Text="Fabrikam" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
         <Label HorizontalTextAlignment="Center" Text="Food!" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
         <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+        <Label HorizontalTextAlignment="Center" Text="Challenge: Get Contempt to get Fabrikam Special for $5" TextColor="#58c0fc" BackgroundColor="White" FontSize="10"/>
         <Button x:Name="TakePicBtn" Text="Take Picture" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="TakePicture_Clicked" />
         <Button x:Name="accept_btn" Text="Accept Order" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="Accept_Clicked" IsVisible="false" />
         

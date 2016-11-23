@@ -10,14 +10,12 @@ namespace Moodify {
     class AzureManager {
         private static AzureManager instance;
         private MobileServiceClient client;
-        private IMobileServiceTable<EmotionModel> emotionModelTable;
-        private IMobileServiceTable<FoodItemModel> foodItemModelTable;
+        public IMobileServiceTable<FoodItemModel> foodItemModelTable;
         private IMobileServiceTable<UserModel> userModelTable;
         private IMobileServiceTable<OrderModel> orderModelTable;
 
         private AzureManager() {
             this.client = new MobileServiceClient("https://moodtimelinee.azurewebsites.net/");
-            this.emotionModelTable = this.client.GetTable<EmotionModel>();
             this.foodItemModelTable = this.client.GetTable<FoodItemModel>();
             this.userModelTable = this.client.GetTable<UserModel>();
             this.orderModelTable = this.client.GetTable<OrderModel>();
@@ -37,38 +35,42 @@ namespace Moodify {
             }
         }
 
-        public async Task AddEmotionModel(EmotionModel emotionModel) {
-            await this.emotionModelTable.InsertAsync(emotionModel);
-        }
 
-        public async Task<List<EmotionModel>> GetEmotionModels() {
-            return await this.emotionModelTable.ToListAsync();
-        }
-
+        //Add fooditems
         public async Task AddFoodItemModel(FoodItemModel foodItemModel) {
             await this.foodItemModelTable.InsertAsync(foodItemModel);
         }
 
+        //Get foodItems
         public async Task<List<FoodItemModel>> GetFoodItemModels() {
             return await this.foodItemModelTable.ToListAsync();
         }
 
+        //delete foodItems
+        public async Task DeleteFoodItemModel(FoodItemModel foodItemModel) {
+            await foodItemModelTable.DeleteAsync(foodItemModel); ;
+        }
+        //Update foodItems
+        public async Task UpdateFoodItemModel(FoodItemModel foodItemModel) {
+            await foodItemModelTable.UpdateAsync(foodItemModel);
+        }
+
+        //Add users
         public async Task AddUserModel(UserModel userModel) {
             await this.userModelTable.InsertAsync(userModel);
         }
 
+        //get users
         public async Task<List<UserModel>> GetUserModels() {
             return await this.userModelTable.ToListAsync();
         }
 
+        //add orders
         public async Task AddOrderModel(OrderModel orderModel) {
             await this.orderModelTable.InsertAsync(orderModel);
         }
 
-        public async Task DeleteOrderModel(OrderModel orderModel) {
-            await this.orderModelTable.DeleteAsync(orderModel);
-        }
-
+        //get orders
         public async Task<List<OrderModel>> GetOrderModels() {
             return await this.orderModelTable.ToListAsync();
         }

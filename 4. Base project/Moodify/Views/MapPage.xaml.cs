@@ -12,10 +12,10 @@ namespace Moodify.Views {
     public partial class MapPage : ContentPage {
         public MapPage() {
             InitializeComponent();
-
+            //Create the map instance to a specified location
             var map = new Map(
             MapSpan.FromCenterAndRadius(
-                    new Position(-36.9196680, 174.7488320), Distance.FromMiles(0.3))) {
+                    new Position(-36.8546600, 174.7673700), Distance.FromMiles(0.3))) {
                 IsShowingUser = true,
                 HeightRequest = 100,
                 WidthRequest = 960,
@@ -25,12 +25,13 @@ namespace Moodify.Views {
             stack.Children.Add(map);
             Content = stack;
 
-            var position = new Position(-36.9196680, 174.7488320); // Latitude, Longitude
+            //Add pin to the position
+            var position = new Position(-36.8546600, 174.7673700); // Latitude, Longitude
             var pin = new Pin {
                 Type = PinType.Place,
                 Position = position,
                 Label = "Fabrikam Food",
-                Address = "28 Oakdale Rd"
+                Address = "1 Mount Street"
             };
             map.Pins.Add(pin);
 

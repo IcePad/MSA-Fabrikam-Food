@@ -23,6 +23,7 @@ namespace Moodify.Views {
 
 
         private async void getMenu() {
+            //Methods to popluate the listviews with respective menu
             HappyFood();
             AngryFood();
             ContemptFood();
@@ -32,58 +33,57 @@ namespace Moodify.Views {
             NeutralFood();
             SadFood();
             SurprisedFood();
-
-
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void HappyFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Happy");
             happyMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void AngryFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Angry");
             angryMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void ContemptFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Contempt");
             ContemptMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void DisgustedFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Disgusted");
             DisgustedMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void ScaredFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Scared");
             ScaredMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void NeutralFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Neutral");
             NeutralMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void SadFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Sad");
             SadMenuList.ItemsSource = foodItems;
         }
-
+        //Methods to popluate the listviews with respective menu
         private async void SurprisedFood() {
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Surprised");
             SurprisedMenuList.ItemsSource = foodItems;
         }
 
+        //Button event to add item to cart and add subtotal
         public async void addBtn(object sender, EventArgs e) {
             if (App.loggedIn == true) {
                 var mi = ((Button)sender);
@@ -102,27 +102,34 @@ namespace Moodify.Views {
                         preCart.Add(emo);
                     }
                 }
+                //Check to ensure user is logged in
             } else {
-                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                await DisplayAlert("Alert", "Please log in via Log In page", "OK");
                 App.RootPage.Detail = new NavigationPage(new HomePage());
             }
         }
 
+        //Displays the cart
         public async void cartBtn(object sender, EventArgs e) {
             string cartList = "";
             foreach (OrderModel item in preCart) {
                 cartList = cartList + item.FoodName + " $" + item.Price + Environment.NewLine;
             }
+            //Ask user if he wants to confirm the purchase
+            //If yes, inserts new order into order menu
             var answer = await DisplayAlert("Complete purchase?", cartList, "Yes", "No");
             if (answer == true) {
                 foreach (OrderModel item in preCart) {
                     await AzureManager.AzureManagerInstance.AddOrderModel(item);
+                    App.RootPage.Detail = new NavigationPage(new OrderPage());
+                    App.MenuIsPresented = false;
                 }
             }
             if (answer == false) {
             }
         }
 
+        //Clears cart and the total string.
         public async void clearbtn(object sender, EventArgs e) {
             preCart = new List<OrderModel>();
             cartTotal.Text = "Total: $0.00";

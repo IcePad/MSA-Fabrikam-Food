@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moodify.Views.FoodInputPage"
-             >
+             x:Class="Moodify.Views.UpdateFoodItemPage">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="1*" />
@@ -20,7 +19,7 @@
     <Entry Grid.Row="3" x:Name="priceInput" Placeholder="Price" TextColor="Pink"/>
     <Label Grid.Row="4" TextColor="#58c0fc" FontSize="30" Text="Enter a Mood to register to"  />
     <Entry Grid.Row="5" x:Name="moodInput" Placeholder="Mood" TextColor="Pink"/>
-    <Button Grid.Row="6" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Insert into Database" Clicked="insert_Clicked"/>
+    <Button Grid.Row="6" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Update!" Clicked="updateFoodItem_Clicked"/>
     <ActivityIndicator Grid.Row="7" x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
   </Grid>
 </ContentPage>

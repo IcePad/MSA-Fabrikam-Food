@@ -9,11 +9,13 @@
       <RowDefinition Height="1*" />
       <RowDefinition Height="1*" />
       <RowDefinition Height="3*" />
+      <RowDefinition Height="2*" />
     </Grid.RowDefinitions>
     <Label Grid.Row="0" TextColor="#58c0fc" FontSize="30" Text="Enter User Name"  />
     <Entry Grid.Row="1" x:Name="loginName" Placeholder="User Name" TextColor="Pink"/>
     <Label Grid.Row="2" TextColor="#58c0fc" FontSize="30" Text="Enter Password"  />
     <Entry Grid.Row="3" x:Name="loginPass" Placeholder="Password" TextColor="Pink" IsPassword="true"/>
     <Button Grid.Row="4" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Log In" Clicked="UserLogIn_Clicked"/>
+    <ActivityIndicator Grid.Row="5" x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
   </Grid>
 </ContentPage>

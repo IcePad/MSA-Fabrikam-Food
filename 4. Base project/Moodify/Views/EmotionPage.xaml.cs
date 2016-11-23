@@ -23,10 +23,11 @@ namespace Moodify.Views
 		}
 
         private async void TakePicture_Clicked(object sender, EventArgs e) {
+            //Ensure's the user is logged in
             if (App.loggedIn == true) {
                 takePicture();
             } else {
-                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                await DisplayAlert("Alert", "Please log in via Log In page", "OK");
                 App.RootPage.Detail = new NavigationPage(new HomePage());
             }
 
@@ -65,28 +66,15 @@ namespace Moodify.Views
                     accept_btn.Text = tStatus + " Menu!";
                     accept_btn.IsVisible = true;
                 });
-                var temp = emotionResults[0].Scores;
-                EmotionModel emo = new EmotionModel() {
-                    Anger = temp.Anger,
-                    Contempt = temp.Contempt,
-                    Disgust = temp.Disgust,
-                    Fear = temp.Fear,
-                    Happiness = temp.Happiness,
-                    Neutral = temp.Neutral,
-                    Sadness = temp.Sadness,
-                    Surprise = temp.Surprise,
-                    Date = DateTime.Now
-                };
-                //Inserting into the database. 
-                await AzureManager.AzureManagerInstance.AddEmotionModel(emo);
+
             } catch (Exception ex) {
                 errorLabel.Text = ex.Message;
             }
         }
             
-        
 
         private async void Accept_Clicked(object sender, EventArgs e) {
+            //Removing all other moods from the foodItemModel 
             List<FoodItemModel> foodItems = await AzureManager.AzureManagerInstance.GetFoodItemModels();
             if (tStatus == "Happy") {
                 foodItems.RemoveAll(FoodItemModel => FoodItemModel.Mood != "Happy");
@@ -113,6 +101,7 @@ namespace Moodify.Views
         }
 
         private void getMood(Scores score) {
+            //Return which mood is the highest
             if (score.Anger >= 0.60) {
                 tStatus = "Angry";
             } else if (score.Contempt >= 0.60) {
@@ -134,6 +123,8 @@ namespace Moodify.Views
 
 
         public async void addtoCardBtn(object sender, EventArgs e) {
+            //This adds item to the cart while also totaling the value
+            //Ensures user is logged in
             if (App.loggedIn == true) {
                 var mi = ((Button)sender);
                 await DisplayAlert("Alert", mi.Text + " added to your cart!", "OK");
@@ -152,12 +143,12 @@ namespace Moodify.Views
                     }
                 }
             } else {
-                await DisplayAlert("Alert", "Please log in via home page", "OK");
+                await DisplayAlert("Alert", "Please log in via Log In page", "OK");
                 App.RootPage.Detail = new NavigationPage(new HomePage());
             }
         }
 
-
+        //When user pressed the cart button, enables them to view cart
         private async void cartBtn(object sender, EventArgs e) {
             if (App.loggedIn == true) {
                 viewCart();
@@ -167,6 +158,7 @@ namespace Moodify.Views
             }
         }
 
+        //The cart button will display a display alert showing them their cart
         public async void viewCart() {
             string cartList = "";
             foreach (OrderModel item in preCart) {
@@ -181,7 +173,7 @@ namespace Moodify.Views
             if (answer == false) {
             }
         }
-
+        //This button clears the cart and total string. 
         public async void clearbtn(object sender, EventArgs e) {
             preCart = new List<OrderModel>();
             cartTotal.Text = "Total: $0.00";
