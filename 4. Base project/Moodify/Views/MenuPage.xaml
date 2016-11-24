@@ -7,7 +7,7 @@
 		<StackLayout Spacing="5" BackgroundColor="White">
       <Label TextColor="#58c0fc" FontSize = "60" Text="Menu" HorizontalTextAlignment="Center" />
       <Label x:Name="uName" TextColor="Pink" FontSize = "10" Text="{Binding name}" HorizontalTextAlignment="Center" />
-			<Button Text="Log In" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoHomeCommand}" />
+			<Button Text="Log In/Sign Up" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoHomeCommand}" />
 			<Button Text="Emotion Menu" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoEmotionCommand}" />
       <Button Text="Menu" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoFoodMenuCommand}" />
       <Button Text="View Orders" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoOrderCommand}" />
