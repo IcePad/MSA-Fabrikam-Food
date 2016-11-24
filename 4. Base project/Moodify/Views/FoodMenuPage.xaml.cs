@@ -23,6 +23,8 @@ namespace Moodify.Views {
 
 
         private async void getMenu() {
+            //Progress bar
+            ProgressIndicator.IsRunning = true;
             //Methods to popluate the listviews with respective menu
             HappyFood();
             AngryFood();
@@ -33,6 +35,8 @@ namespace Moodify.Views {
             NeutralFood();
             SadFood();
             SurprisedFood();
+            //Progress bar
+            ProgressIndicator.IsRunning = false;
         }
         //Methods to popluate the listviews with respective menu
         private async void HappyFood() {
