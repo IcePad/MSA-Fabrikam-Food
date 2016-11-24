@@ -3,15 +3,14 @@
   <ContentPage.Content>
     <ScrollView>
       <StackLayout BackgroundColor="White">
-        <Label HorizontalTextAlignment="Center" Text="Fabrikam" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
-        <Label HorizontalTextAlignment="Center" Text="Food!" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
+        <Label HorizontalTextAlignment="Center" Text="Emotion Menu" TextColor="#58c0fc" BackgroundColor="White" FontSize="40" />
         <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
         <Label HorizontalTextAlignment="Center" Text="Challenge: Get Contempt to get Fabrikam Special for $5" TextColor="#58c0fc" BackgroundColor="White" FontSize="10"/>
         <Button x:Name="TakePicBtn" Text="Take Picture" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="TakePicture_Clicked" />
-        <Button x:Name="accept_btn" Text="Accept Order" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="Accept_Clicked" IsVisible="false" />
+        <Button x:Name="accept_btn" Text="Accept Order" FontSize ="15" TextColor="White" BackgroundColor="Pink" Clicked="Accept_Clicked" IsVisible="false" />
         
-        <Button Text="Cart" Clicked="cartBtn"/>
-        <Button Text="Clear" Clicked="clearbtn" BackgroundColor="Red" FontSize="20"/>
+        <Button Text="Cart" Clicked="cartBtn" BackgroundColor="#66ff66" TextColor="White"/>
+        <Button Text="Clear" Clicked="clearbtn" BackgroundColor="Red" TextColor="White" />
         <Label x:Name="cartTotal" HorizontalTextAlignment="Start" Text="Total: $0.00" TextColor="#58c0fc" BackgroundColor="White" FontSize="20" />
         <Label x:Name="errorLabel" />
 
@@ -26,11 +25,11 @@
                   </Grid.RowDefinitions>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*" />
-                    <ColumnDefinition Width="10*" />
-                    <ColumnDefinition Width="40*" />
-                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="25*" />
                   </Grid.ColumnDefinitions>
-                  <Button Grid.Column="0" Text="{Binding Name}" Clicked="addtoCardBtn" CommandParameter="{Binding .}"/>
+                  <Button Grid.Column="0" Text="{Binding Name}" Clicked="addtoCardBtn" BackgroundColor="#58c0fc" TextColor="White" CommandParameter="{Binding .}"/>
                   <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
                   <Label Grid.Column="2" Text="{Binding EmotionPrice}" HorizontalTextAlignment="Start"/>
                   <Label Grid.Column="3" Text="{Binding Mood}"/>
