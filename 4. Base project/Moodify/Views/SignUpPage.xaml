@@ -9,6 +9,8 @@
       <RowDefinition Height="1*" />
       <RowDefinition Height="1*" />
       <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
       <RowDefinition Height="3*" />
       <RowDefinition Height="2*" />
     </Grid.RowDefinitions>
@@ -16,8 +18,10 @@
     <Entry Grid.Row="1" x:Name="userNameInput" Placeholder="User Name" TextColor="Pink"/>
     <Label Grid.Row="2" TextColor="#58c0fc" FontSize="30" Text="Enter Password"  />
     <Entry Grid.Row="3" x:Name="passwordInput" Placeholder="Password" TextColor="Pink" IsPassword="true"/>
-    <Label Grid.Row="4" TextColor="#58c0fc" FontSize="30" Text="Error" IsVisible="false" />
-    <Button Grid.Row="5" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Sign Up" Clicked="NewSignUp_Clicked"/>
-    <ActivityIndicator Grid.Row="6" x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
+    <Label Grid.Row="4" TextColor="#58c0fc" FontSize="30" Text="Re-Enter Password"  />
+    <Entry Grid.Row="5" x:Name="passwordInput2" Placeholder="Password" TextColor="Pink" IsPassword="true"/>
+    <Label Grid.Row="6" TextColor="#58c0fc" FontSize="30" Text="Error" IsVisible="false" />
+    <Button Grid.Row="7" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Sign Up" Clicked="NewSignUp_Clicked"/>
+    <ActivityIndicator Grid.Row="8" x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
   </Grid>
 </ContentPage>

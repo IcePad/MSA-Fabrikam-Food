@@ -168,8 +168,8 @@ namespace Moodify.Views
             if (answer == true) {
                 foreach (OrderModel item in preCart) {
                     await AzureManager.AzureManagerInstance.AddOrderModel(item);
-                    await DisplayAlert("Alert", "Purchase Successful!", "OK");
                     App.RootPage.Detail = new NavigationPage(new EmotionPage());
+                    await DisplayAlert("Alert", "Purchase Successful!", "OK");
                 }
             }
             if (answer == false) {

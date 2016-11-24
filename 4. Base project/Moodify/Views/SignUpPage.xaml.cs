@@ -39,11 +39,18 @@ namespace Moodify.Views {
 
         private async void checkPassword() {
             //Check if user name is null
-            if (passwordInput.Text != null) {
+            if (passwordInput.Text != null && passwordInput2.Text != null) {
                 //Check to see if name is greater than 3 characters
-                if (passwordInput.Text.Length >= 6) {
-                    //check if name is already being used
-                    checkNameAvailability();
+                if (passwordInput.Text.Length >= 6 && passwordInput2.Text.Length >= 6 ) {
+                    //Check if passwords match one another
+                    if(passwordInput.Text == passwordInput2.Text) {
+                        //check if name is already being used
+                        checkNameAvailability();
+                    } else {
+                        await DisplayAlert("Alert", "Ensure passwords are the same!", "OK");
+                        //Progress bar
+                        ProgressIndicator.IsRunning = false;
+                    }
                 }else {
                     await DisplayAlert("Alert", "Please enter a password with atleast 6 charcters!", "OK");
                     //Progress bar
