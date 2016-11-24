@@ -126,6 +126,7 @@ namespace Moodify.Views {
                 if (answer == true) {
                     foreach (OrderModel item in preCart) {
                         await AzureManager.AzureManagerInstance.AddOrderModel(item);
+                        await DisplayAlert("Alert", "Successfully Completed Purchase!", "OK");
                         App.RootPage.Detail = new NavigationPage(new OrderPage());
                         App.MenuIsPresented = false;
                     }
