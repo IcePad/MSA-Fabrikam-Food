@@ -143,6 +143,7 @@ namespace Moodify.Views {
         //Clears cart and the total string.
         public async void clearbtn(object sender, EventArgs e) {
             preCart = new List<OrderModel>();
+             total = 0;
             cartTotal.Text = "Total: $0.00";
         }
     }

@@ -9,7 +9,7 @@
         <Button x:Name="TakePicBtn" Text="Take Picture" FontSize ="15" TextColor="White" BackgroundColor="#58c0fc" Clicked="TakePicture_Clicked" />
         <Button x:Name="accept_btn" Text="Accept Order" FontSize ="15" TextColor="White" BackgroundColor="Pink" Clicked="Accept_Clicked" IsVisible="false" />
         
-        <Button Text="Cart" Clicked="cartBtn" BackgroundColor="#66ff66" TextColor="White"/>
+        <Button Text="Cart / Purchase" Clicked="cartBtn" BackgroundColor="#66ff66" TextColor="White"/>
         <Button Text="Clear" Clicked="clearbtn" BackgroundColor="Red" TextColor="White" />
         <Label x:Name="cartTotal" HorizontalTextAlignment="Start" Text="Total: $0.00" TextColor="#58c0fc" BackgroundColor="White" FontSize="20" />
         <Label x:Name="errorLabel" />

@@ -78,7 +78,7 @@ namespace Moodify.Views {
                 }
             }
             App.RootPage.Detail = new NavigationPage(new ClearOrderPage());
-            await DisplayAlert("Alert", n + " order has been cleared!", "OK");
+            await DisplayAlert("Alert", n + " orders have been cleared!", "OK");
             //No item in db, alert user. 
             if (itemInDb == false) {
                 await DisplayAlert("Alert", n + " has no orders to clear!", "OK");

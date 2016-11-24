@@ -7,7 +7,7 @@
       <StackLayout BackgroundColor="White"   >
         <Label HorizontalTextAlignment="Center" Text="Menu!" TextColor="#58c0fc" BackgroundColor="White" FontSize="50" />
         <ActivityIndicator x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
-        <Button Text="Cart" Clicked="cartBtn" BackgroundColor="#66ff66" TextColor="White"/>
+        <Button Text="Cart / Purchase" Clicked="cartBtn" BackgroundColor="#66ff66" TextColor="White"/>
         <Label x:Name="cartTotal" HorizontalTextAlignment="Start" Text="Total: $0.00" TextColor="#58c0fc" BackgroundColor="White" FontSize="20" />
         <Button Text="Clear" Clicked="clearbtn" BackgroundColor="Red" TextColor="White" />
         <Label HorizontalTextAlignment="Start" Text="Happy - Guilty Pleasures" TextColor="Pink" BackgroundColor="White" FontSize="30" />
