@@ -54,6 +54,9 @@
     <Compile Include="Views\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ClearOrderPage.xaml.cs">
+      <DependentUpon>ClearOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeleteFoodItemPage.xaml.cs">
       <DependentUpon>DeleteFoodItemPage.xaml</DependentUpon>
     </Compile>
@@ -225,6 +228,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AboutUsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ClearOrderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

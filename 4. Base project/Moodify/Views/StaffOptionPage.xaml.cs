@@ -22,6 +22,11 @@ namespace Moodify.Views {
             App.RootPage.Detail = new NavigationPage(new UpdateFoodItemPage());
             App.MenuIsPresented = false;
         }
+        //Button to open up page to clear order to clear order
+        public async void clearOrder_Clicked(object sender, EventArgs e) {
+            App.RootPage.Detail = new NavigationPage(new ClearOrderPage());
+            App.MenuIsPresented = false;
+        }
         //Button to open up page to delete food from the database
         public async void delete_Clicked(object sender, EventArgs e) {
             App.RootPage.Detail = new NavigationPage(new DeleteFoodItemPage());

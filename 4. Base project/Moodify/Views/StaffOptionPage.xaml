@@ -8,10 +8,12 @@
       <RowDefinition Height="1*" />
       <RowDefinition Height="1*" />
       <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
 
     </Grid.RowDefinitions>
     <Button Grid.Row="0" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Add new" Clicked="add_Clicked"/>
     <Button Grid.Row="1" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Update" Clicked="update_Clicked"/>
-    <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="Red" Text="Delete" Clicked="delete_Clicked"/>
+    <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Clear Order" Clicked="clearOrder_Clicked"/>
+    <Button Grid.Row="3" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="Red" Text="Delete" Clicked="delete_Clicked"/>
   </Grid>
 </ContentPage>

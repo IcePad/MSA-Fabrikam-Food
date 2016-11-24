@@ -74,5 +74,10 @@ namespace Moodify {
         public async Task<List<OrderModel>> GetOrderModels() {
             return await this.orderModelTable.ToListAsync();
         }
+
+        //delete foodItems
+        public async Task DeleteOrderModel(OrderModel orderModel) {
+            await orderModelTable.DeleteAsync(orderModel); ;
+        }
     }
 }

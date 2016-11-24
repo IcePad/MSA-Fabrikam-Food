@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.ClearOrderPage">
+  <StackLayout>
+    <Label HorizontalTextAlignment="Center" Text="Customers Orders" TextColor="#58c0fc" BackgroundColor="White" FontSize="20" />
+    <Entry Grid.Row="1" x:Name="customerName" Placeholder="Customers Name" TextColor="Pink"/>
+    <Button  Text="Get Orders" TextColor="White" BackgroundColor="#58c0fc" Clicked="getOrders_Clicked" />
+    <Button  x:Name="clearBtn" Text="Clear Orders" TextColor="White" BackgroundColor="Red" Clicked="clearOrders_Clicked" IsVisible="false"/>
+    
+    <ListView x:Name="orderList" HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="40*" />
+              </Grid.ColumnDefinitions>
+              <Label Grid.Column="0" Text="{Binding FoodName}"/>
+              <Label Grid.Column="1" Text="$" HorizontalTextAlignment="End"/>
+              <Label Grid.Column="2" Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label x:Name="totalDisplay" HorizontalTextAlignment="Center" Text="" TextColor="#58c0fc" BackgroundColor="White" FontSize="15" />
+    <ActivityIndicator x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
+  </StackLayout>
+</ContentPage>
