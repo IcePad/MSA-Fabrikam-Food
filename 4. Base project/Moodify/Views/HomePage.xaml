@@ -5,5 +5,6 @@
     <Label HorizontalTextAlignment="Center" Text="Food!" TextColor="#58c0fc" BackgroundColor="White" FontSize="75" />
     <Button x:Name="logIn_btn" Text="Log In" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Clicked="LogIn_Clicked" />
     <Button x:Name="signUp_btn" Text="Sign Up" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Clicked="SignUp_Clicked" />
+    <Image Source="icon.jpg"/>
   </StackLayout>
 </ContentPage>

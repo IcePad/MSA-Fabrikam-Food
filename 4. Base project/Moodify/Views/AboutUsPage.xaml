@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moodify.Views.AboutUsPage">
+  <StackLayout Spacing="10" BackgroundColor="White">
+    <Label TextColor="#58c0fc" FontSize = "50" Text="Fabrikam Food" HorizontalTextAlignment="Center" />
+    <Image Source="icon.jpg"/>
+    <Label TextColor="#58c0fc" FontSize = "15" Text="Welcome to the Fabrikam Food Application! We believe in expressing ourselves through emotion. So why not join us and give it a try. Use our Emotion Menu to get discounted food and show us that emotion!" HorizontalTextAlignment="Center" />
+    <Label TextColor="#58c0fc" FontSize = "15" Text="Don't Forget about our special challenge. Get the Contempt emotion and get our special dish for only $5!" HorizontalTextAlignment="Center" />
+    <Label TextColor="Black" FontSize = "10" Text="Address: 1 Mount Street, Auckland, New Zealand" HorizontalTextAlignment="Center" />
+    <Label TextColor="Black" FontSize = "10" Text="Opening Hours:" HorizontalTextAlignment="Center" />
+    <Label TextColor="Black" FontSize = "10" Text="Mon - Sat = 10am - 10pm" HorizontalTextAlignment="Center" />
+    <Label TextColor="Black" FontSize = "10" Text="Sun = 10am - 8pm" HorizontalTextAlignment="Center" />
+    <Label TextColor="Black" FontSize = "10" Text="Call Us: 021 884 550" HorizontalTextAlignment="Center" />
+  </StackLayout>
+</ContentPage>

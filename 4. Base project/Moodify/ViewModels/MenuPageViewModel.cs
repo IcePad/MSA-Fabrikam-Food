@@ -14,6 +14,7 @@ namespace Moodify
         public ICommand GoFoodInputCommand { get; set; }
         public ICommand GoOrderCommand { get; set; }
         public ICommand GoMapCommand { get; set; }
+        public ICommand AboutUsCommand { get; set; }
         public string name { get; set; }
         public bool logg { get; set;  }
 
@@ -28,6 +29,7 @@ namespace Moodify
             GoStaffCommand = new Command(GoStaff);
             GoFoodInputCommand = new Command(GoFoodInput);
             GoMapCommand = new Command(GoMapInput);
+            AboutUsCommand = new Command(AboutUsInput);
         }
 
 		void GoHome(object obj)
@@ -65,6 +67,11 @@ namespace Moodify
 
         void GoMapInput(object obj) {
             App.RootPage.Detail = new NavigationPage(new MapPage());
+            App.MenuIsPresented = false;
+        }
+
+        void AboutUsInput(object obj) {
+            App.RootPage.Detail = new NavigationPage(new AboutUsPage());
             App.MenuIsPresented = false;
         }
     }

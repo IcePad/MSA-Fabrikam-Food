@@ -11,7 +11,7 @@
   </Grid.RowDefinitions>
   <Label Grid.Row="0" TextColor="#58c0fc" FontSize="30" Text="Enter Item Name to delete"  />
   <Entry Grid.Row="1" x:Name="nameInput" Placeholder="Item Name" TextColor="Pink"/>
-  <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="#58c0fc" Text="Delete" Clicked="deleteFood_Clicked"/>
+  <Button Grid.Row="2" VerticalOptions="Fill" FontSize ="50" TextColor="White" BackgroundColor="Red" Text="Delete" Clicked="deleteFood_Clicked"/>
   <ActivityIndicator Grid.Row="3" x:Name="ProgressIndicator" Color="Red" IsRunning="false" />
   </Grid>
 </ContentPage>

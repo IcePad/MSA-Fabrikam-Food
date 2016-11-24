@@ -4,15 +4,16 @@
 		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
 	</ContentPage.Padding>
 	<ContentPage.Content>
-		<StackLayout Spacing="10" BackgroundColor="White">
-      <Label TextColor="#58c0fc" FontSize = "75" Text="Menu" HorizontalTextAlignment="Center" />
+		<StackLayout Spacing="5" BackgroundColor="White">
+      <Label TextColor="#58c0fc" FontSize = "60" Text="Menu" HorizontalTextAlignment="Center" />
       <Label x:Name="uName" TextColor="#58c0fc" FontSize = "10" Text="{Binding name}" HorizontalTextAlignment="Center" />
 			<Button Text="Log In" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoHomeCommand}" />
-			<Button Text="Emotive Food Idea's" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoEmotionCommand}" />
+			<Button Text="Emotion Menu" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoEmotionCommand}" />
       <Button Text="Menu" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoFoodMenuCommand}" />
       <Button Text="View Orders" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoOrderCommand}" />
       <Button Text="Map" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoMapCommand}" />
       <Button Text="Staff" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding GoStaffCommand}" />
+      <Button Text="About Us" TextColor="White" BackgroundColor="#58c0fc" Command="{Binding AboutUsCommand}" />
       <Image Source="icon.jpg" />
 		</StackLayout>
 

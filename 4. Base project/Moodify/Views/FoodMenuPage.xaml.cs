@@ -115,22 +115,28 @@ namespace Moodify.Views {
 
         //Displays the cart
         public async void cartBtn(object sender, EventArgs e) {
-            string cartList = "";
-            foreach (OrderModel item in preCart) {
-                cartList = cartList + item.FoodName + " $" + item.Price + Environment.NewLine;
-            }
-            //Ask user if he wants to confirm the purchase
-            //If yes, inserts new order into order menu
-            var answer = await DisplayAlert("Complete purchase?", cartList, "Yes", "No");
-            if (answer == true) {
+            if (App.loggedIn == true) {
+                string cartList = "";
                 foreach (OrderModel item in preCart) {
-                    await AzureManager.AzureManagerInstance.AddOrderModel(item);
-                    App.RootPage.Detail = new NavigationPage(new OrderPage());
-                    App.MenuIsPresented = false;
+                    cartList = cartList + item.FoodName + " $" + item.Price + Environment.NewLine;
                 }
+                //Ask user if he wants to confirm the purchase
+                //If yes, inserts new order into order menu
+                var answer = await DisplayAlert("Complete purchase?", cartList, "Yes", "No");
+                if (answer == true) {
+                    foreach (OrderModel item in preCart) {
+                        await AzureManager.AzureManagerInstance.AddOrderModel(item);
+                        App.RootPage.Detail = new NavigationPage(new OrderPage());
+                        App.MenuIsPresented = false;
+                    }
+                }
+                if (answer == false) {
+                }
+            } else {
+                await DisplayAlert("Alert", "Please log in via Log In page", "OK");
+                App.RootPage.Detail = new NavigationPage(new HomePage());
             }
-            if (answer == false) {
-            }
+
         }
 
         //Clears cart and the total string.
