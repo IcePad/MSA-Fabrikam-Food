@@ -89,7 +89,12 @@ namespace Moodify.Views {
             };
             //Insert item into the UserModel table
             await AzureManager.AzureManagerInstance.AddUserModel(userItem);
+            //Log straight into the current account
+            App.currentName = newName;
+            App.loggedIn = true;
             await DisplayAlert("Alert", "Successfully signed up!", "OK");
+            App.RootPage.Master = new MenuPage();
+            App.MenuIsPresented = true;
             //Progress bar
             ProgressIndicator.IsRunning = false;
         }
